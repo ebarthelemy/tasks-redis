@@ -1,9 +1,21 @@
+<form method="POST" action="/tasks/add">
+  <label>Add Task</label>
+  <input type="text" name="task" placeholder="Add Task">
+  <input type="submit" value="Submit">
+</form>
+
 <%= title %>
 
-<ul>
-  <% tasks.forEach((task) => { %>
+<form method="POST" action="/tasks/delete">
+  <ul>
+  <% tasks.forEach(function(task) { %>
     <li>
-      <%= task %>
+      <label>
+        <input type="checkbox" name="tasks" value="<%= task %>">
+        <span><%= task %></span>
+      </label>
     </li>
   <% }) %>
-</ul>
+  </ul>
+  <input type="submit" value="Remove">
+</form>
